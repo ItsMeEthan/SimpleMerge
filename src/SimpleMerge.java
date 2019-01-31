@@ -10,17 +10,27 @@ public class SimpleMerge {
         int x = 0;
         int y = 0;
         for (int mm = 0; mm < m.length; mm++) {
-            if (arr1[x] < arr2[y]) {
-                if (x<arr1.length-1) {
-                    m[mm] = arr1[x];
-                    x++;
-                }
-            }
-            else {
-                if (y < arr2.length) {
+            if (x >= arr1.length || y >= arr2.length) {
+                if (x >= arr1.length) {
                     m[mm] = arr2[y];
                     y++;
+                } else {
+                    m[mm] = arr1.length;
+                    x++;
                 }
+            } else {
+                if (arr1[x] < arr2[y]) {
+                    if (x < arr1.length) {
+                        m[mm] = arr1[x];
+                        x++;
+                    }
+                } else {
+                    if (y < arr2.length) {
+                        m[mm] = arr2[y];
+                        y++;
+                    }
+                }
+
             }
         }
         return m;
