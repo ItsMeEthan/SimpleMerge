@@ -15,7 +15,7 @@ public class SimpleMerge {
                     m[mm] = arr2[y];
                     y++;
                 } else {
-                    m[mm] = arr1.length;
+                    m[mm] = arr1[x];
                     x++;
                 }
             } else {
